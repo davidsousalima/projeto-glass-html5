@@ -6,7 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tudo sobre o Google Glass </title>
     <link rel="stylesheet" href="_css/estilo.css">
+    <link rel="stylesheet" href="_css/form.css">
     <script src="_javascript/funcoes.js"></script>
+    <script>
+        function calc(){
+            var qtd = Number(document.getElementById("cquat").value)
+            tot = qtd*1500
+            document.getElementById("ctot").value = tot
+        }
+    </script>
 </head>
 <body>
     <div id="interface">
@@ -15,15 +23,15 @@
                 <h1>Google Glass</h1>
                 <h2>A revolução do Google está chegando</h2>
             </hgroup>
-            <img id="icone" src="_imagens/glass-oculos-preto-peq.png" alt="">
+            <img id="icone" src="_imagens/contato.png" alt="">
             <nav id="menu">
                 <h1>Menu Principal</h1>
                 <ul type="disc">
-                    <li onmousemove="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="index.html" >Home</a></li>
-                    <li onmousemove="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="specs.html" >Especificações</a></li>
-                    <li onmousemove="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="fotos.html" >Fotos</a></li>
-                    <li onmousemove="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="multimidia.html">Multimídia</a></li>
-                    <li onmousemove="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+                    <li onmousemove="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html" >Home</a></li>
+                    <li onmousemove="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html" >Especificações</a></li>
+                    <li onmousemove="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html" >Fotos</a></li>
+                    <li onmousemove="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+                    <li onmousemove="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
                 </ul>
             </nav>
         </header>
@@ -38,7 +46,7 @@
             </header>
 
 
-<form action="" method="post"id="tcontato">
+<form action="mailto:davidsousamusica01@gmail.com" method="post"id="tcontato" oninput="calc()">
     <fieldset id="usuario">
         <legend>Identificação do Usuário</legend>
             <p>Nome: <input type="text" name="tnome" id="cnome" size="20" maxlength="30" placeholder="Nome Completo"></p>
@@ -73,13 +81,15 @@
     </fieldset>
     <fieldset id="pedido">
             <legend>Quero um Google Glass</legend>
-            Gostaria de adquirir um Google Glass quando disponível
-            Cor:
-            Quantidade:
-            Preço Total: R$
+            <p><input type="checkbox" name="tped" id="cped"><label for="cped">
+                Gostaria de adquirir um Google Glass quando disponível
+            </label></p>
+            <p><label for="ccor">Cor:</label><input type="color" name="tcor" id="ccor"></p>
+            <p><label for="cquat">Quantidade:</label><input type="number" name="tquant" id="cquat" min="0" max="5"></p>
+            <p><label for="ctot">Preço Total: R$</label><input type="text" name="ttot" id="ctot" placeholder="Total a pagar" readonly></p>
     </fieldset>
 
-    [BOTÃO ENVIAR]
+   <input type="image" src="_imagens/botao-enviar.png" alt="" name="tenviar">
 </form>
 <footer id="rodape">
     <p>
